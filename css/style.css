@@ -275,7 +275,7 @@ body > div > div.left > div.home.bg-grey.rounded.m-1.p-1 > div > a > img {
   border-radius: 5px;
 }
 
-.songList ul li:hover{
+.songList ul li:hover {
   background-color: #303030;
 }
 
@@ -357,11 +357,11 @@ body > div > div.left > div.home.bg-grey.rounded.m-1.p-1 > div > a > img {
   gap: 10px;
 }
 
-.volume img:hover{
+.volume img:hover {
   cursor: pointer;
 }
 
-.range > input{
+.range > input {
   cursor: pointer;
 }
 
@@ -428,3 +428,15 @@ body > div > div.left > div.home.bg-grey.rounded.m-1.p-1 > div > a > img {
     width: 50vw;
   }
 }
+
+/* @media (max-width: 379px) {
+  .cardContainer {
+    max-height: 70vh;
+  }
+}
+
+@media (min-width: 340px) {
+  .cardContainer {
+    max-height: 40vh;
+  }
+} */
