@@ -428,15 +428,15 @@ body > div > div.left > div.home.bg-grey.rounded.m-1.p-1 > div > a > img {
     width: 50vw;
   }
 }
-
-/* @media (max-width: 379px) {
+/* 
+@media (max-width: 379px) {
   .cardContainer {
     max-height: 70vh;
   }
-}
-
-@media (min-width: 340px) {
-  .cardContainer {
-    max-height: 40vh;
-  }
 } */
+
+@media (max-width: 340px) {
+  .cardContainer {
+    max-height: 60vh;
+  }
+}
