@@ -435,7 +435,7 @@ body > div > div.left > div.home.bg-grey.rounded.m-1.p-1 > div > a > img {
   }
 } */
 
-@media (max-width: 340px) {
+@media (max-width: 700px) {
   .cardContainer {
     max-height: 60vh;
   }
