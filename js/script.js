@@ -21,12 +21,15 @@ async function getSongs(folder) {
   currFolder = folder;
   let a = await fetch(`/${folder}/`);
   let response = await a.text();
+  // console.log(response)
   let div = document.createElement("div");
   div.innerHTML = response;
   let as = div.getElementsByTagName("a");
+  // console.log(as)
   songs = [];
   for (let index = 0; index < as.length; index++) {
     const element = as[index];
+    // console.log(element)
     if (element.href.endsWith(".mp3")) {
       songs.push(element.href.split(`/${folder}/`)[1]);
     }
@@ -34,6 +37,7 @@ async function getSongs(folder) {
 
   // Show all the songs in the playlist
   let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0];
+  // console.log(songUL)
   songUL.innerHTML = " ";
   for (const song of songs) {
     songUL.innerHTML = songUL.innerHTML +
@@ -52,6 +56,7 @@ async function getSongs(folder) {
   //Adding an event listener to each song
   Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach((e) => {
     e.addEventListener("click", (element) => {
+      // console.log(element)
       // console.log(e.querySelector(".info").firstElementChild.innerHTML)
       playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
     });
@@ -77,16 +82,19 @@ async function displayAlbums() {
   console.log("Displaying albums...")
   let a = await fetch(`/songs/`)
   let response = await a.text();
+  // console.log(response)
   let div = document.createElement("div")
   div.innerHTML = response;
   // console.log(div)
   let anchors = div.getElementsByTagName("a")
   let cardContainer = document.querySelector(".cardContainer")
   let array = Array.from(anchors)
+  // console.log(array)
   for (let index = 0; index < array.length; index++) {
       const e = array[index]; 
       if (e.href.includes("/songs") && !e.href.includes(".htaccess")) {
-          let folder = e.href.split("/").slice(-2)[0]
+          let folder = e.href.split("/").slice(-2)[0];
+          // console.log(folder)
           // Get the metadata of the folder
           let a = await fetch(`/songs/${folder}/info.json`)
           let response = await a.json(); 
